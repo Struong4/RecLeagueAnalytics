@@ -1,0 +1,12 @@
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Domain\bin\Release\net8.0\RecLeague.Domain.deps.json
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Domain\bin\Release\net8.0\RecLeague.Domain.dll
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Domain\bin\Release\net8.0\RecLeague.Domain.pdb
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Domain\obj\Release\net8.0\RecLeague.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Domain\obj\Release\net8.0\RecLeague.Domain.AssemblyInfoInputs.cache
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Domain\obj\Release\net8.0\RecLeague.Domain.AssemblyInfo.cs
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Domain\obj\Release\net8.0\RecLeague.Domain.csproj.CoreCompileInputs.cache
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Domain\obj\Release\net8.0\RecLeague.Domain.sourcelink.json
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Domain\obj\Release\net8.0\RecLeague.Domain.dll
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Domain\obj\Release\net8.0\refint\RecLeague.Domain.dll
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Domain\obj\Release\net8.0\RecLeague.Domain.pdb
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Domain\obj\Release\net8.0\ref\RecLeague.Domain.dll

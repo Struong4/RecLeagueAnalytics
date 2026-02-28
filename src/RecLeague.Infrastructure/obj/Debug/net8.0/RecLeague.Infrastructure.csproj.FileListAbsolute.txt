@@ -1,0 +1,16 @@
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Infrastructure\bin\Debug\net8.0\RecLeague.Infrastructure.deps.json
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Infrastructure\bin\Debug\net8.0\RecLeague.Infrastructure.dll
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Infrastructure\bin\Debug\net8.0\RecLeague.Infrastructure.pdb
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Infrastructure\bin\Debug\net8.0\RecLeague.Domain.dll
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Infrastructure\bin\Debug\net8.0\RecLeague.Domain.pdb
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Infrastructure\obj\Debug\net8.0\RecLeague.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Infrastructure\obj\Debug\net8.0\RecLeague.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Infrastructure\obj\Debug\net8.0\RecLeague.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Infrastructure\obj\Debug\net8.0\RecLeague.Infrastructure.AssemblyInfo.cs
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Infrastructure\obj\Debug\net8.0\RecLeague.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Infrastructure\obj\Debug\net8.0\RecLeague.Infrastructure.sourcelink.json
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Infrastructure\obj\Debug\net8.0\RecLeagu.19BDE85C.Up2Date
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Infrastructure\obj\Debug\net8.0\RecLeague.Infrastructure.dll
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Infrastructure\obj\Debug\net8.0\refint\RecLeague.Infrastructure.dll
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Infrastructure\obj\Debug\net8.0\RecLeague.Infrastructure.pdb
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Infrastructure\obj\Debug\net8.0\ref\RecLeague.Infrastructure.dll
