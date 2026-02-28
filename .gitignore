@@ -1,6 +1,7 @@
 # Local files — not committed
 plan.md
 CLAUDE.md
+.claude/
 
 # .NET build outputs
 bin/
