@@ -1,0 +1,6 @@
+@RecLeague.API_HostAddress = http://localhost:5017
+
+GET {{RecLeague.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
