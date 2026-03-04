@@ -14,3 +14,5 @@ C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Infrastructure\obj\Deb
 C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Infrastructure\obj\Debug\net8.0\refint\RecLeague.Infrastructure.dll
 C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Infrastructure\obj\Debug\net8.0\RecLeague.Infrastructure.pdb
 C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Infrastructure\obj\Debug\net8.0\ref\RecLeague.Infrastructure.dll
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Infrastructure\bin\Debug\net8.0\RecLeague.Infrastructure.runtimeconfig.json
+C:\Users\samue\Downloads\RecLeagueAnalytics\src\RecLeague.Infrastructure\obj\Debug\net8.0\RecLeague.Infrastructure.genruntimeconfig.cache
