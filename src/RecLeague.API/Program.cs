@@ -1,11 +1,27 @@
 using Microsoft.EntityFrameworkCore;
+using RecLeague.Application.Interfaces;
+using RecLeague.Application.Services;
 using RecLeague.Infrastructure;
+using RecLeague.Infrastructure.Interfaces;
+using RecLeague.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Database
 builder.Services.AddDbContext<RecLeagueDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Repositories
+builder.Services.AddScoped<ITeamRepository, TeamRepository>();
+builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
+builder.Services.AddScoped<IGameRepository, GameRepository>();
+builder.Services.AddScoped<IStatLineRepository, StatLineRepository>();
+
+// Services
+builder.Services.AddScoped<ITeamService, TeamService>();
+builder.Services.AddScoped<IPlayerService, PlayerService>();
+builder.Services.AddScoped<IGameService, GameService>();
+builder.Services.AddScoped<IStatLineService, StatLineService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

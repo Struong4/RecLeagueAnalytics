@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RecLeague.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a08653ea91b6eda0fd8f32eac83d7ac24cb07c57")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f2266eae60d76ee75a4646b5a0016dd94d7161f4")]
 [assembly: System.Reflection.AssemblyProductAttribute("RecLeague.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RecLeague.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
