@@ -6,6 +6,7 @@ public class Team
     public int Id { get; set; }
     public string Name {get; set;} = string.Empty;
     public string Season{get; set;} = string.Empty;
+    public string Division {get; set;} = string.Empty;
     
     // Icollection is a interface for a collection thats like a list, you use this when interacting with
     // EF core because sometimes it can turn your list into a collection so this validate it

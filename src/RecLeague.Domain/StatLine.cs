@@ -15,6 +15,11 @@ namespace RecLeague.Domain;
       public int FGM { get; set; }
       public int FTA { get; set; }
       public int FTM { get; set; }
+      public int ThreePointersMade { get; set; }
+      public int ThreePointersAttempted { get; set; }
+      public int OffensiveRebounds { get; set; }
+      public int DefensiveRebounds { get; set; }
+      public int PersonalFouls { get; set; }
       public int MinutesPlayed { get; set; }
 
       public Player Player { get; set; } = null!;

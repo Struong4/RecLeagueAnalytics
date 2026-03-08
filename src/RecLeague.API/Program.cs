@@ -1,6 +1,8 @@
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using RecLeague.Application.Interfaces;
 using RecLeague.Application.Services;
+using RecLeague.Application.Validators;
 using RecLeague.Infrastructure;
 using RecLeague.Infrastructure.Interfaces;
 using RecLeague.Infrastructure.Repositories;
@@ -22,6 +24,10 @@ builder.Services.AddScoped<ITeamService, TeamService>();
 builder.Services.AddScoped<IPlayerService, PlayerService>();
 builder.Services.AddScoped<IGameService, GameService>();
 builder.Services.AddScoped<IStatLineService, StatLineService>();
+builder.Services.AddScoped<IIngestionService, IngestionService>();
+
+// FluentValidation — scans Application assembly and registers all validators
+builder.Services.AddValidatorsFromAssemblyContaining<IngestionRequestValidator>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
