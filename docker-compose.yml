@@ -1,6 +1,6 @@
 services:
 
-  # SQL Server container — same image you've been running manually
+  # SQL Server container
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
     environment:
@@ -11,19 +11,19 @@ services:
     volumes:
       - sqlserver_data:/var/opt/mssql   # persists DB data between docker-compose down/up
 
-  # The API — built from the Dockerfile in src/RecLeague.API/
+  # The API built from the Dockerfile in src/RecLeague.API/
   api:
     build:
-      context: .                        # build context is repo root (Dockerfile COPYs from here)
+      context: .
       dockerfile: src/RecLeague.API/Dockerfile
     ports:
       - "8080:8080"
     environment:
-      # Overrides appsettings.json — "sqlserver" is the service name above, not localhost
+      # Overrides appsettings.json, "sqlserver" is the service name above, not localhost
       ConnectionStrings__DefaultConnection: "Server=sqlserver,1433;Database=RecLeagueDb;User Id=sa;Password=RecLeague@2025!;TrustServerCertificate=True"
       ASPNETCORE_URLS: "http://+:8080"
     depends_on:
-      - sqlserver                       # starts sqlserver first, then api
+      - sqlserver
 
 volumes:
-  sqlserver_data:                       # named volume so data survives restarts
+  sqlserver_data:
