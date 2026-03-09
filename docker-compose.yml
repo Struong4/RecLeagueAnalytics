@@ -1,0 +1,29 @@
+services:
+
+  # SQL Server container
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "RecLeague@2025!"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql   # persists DB data between docker-compose down/up
+
+  # The API built from the Dockerfile in src/RecLeague.API/
+  api:
+    build:
+      context: .
+      dockerfile: src/RecLeague.API/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      # Overrides appsettings.json, "sqlserver" is the service name above, not localhost
+      ConnectionStrings__DefaultConnection: "Server=sqlserver,1433;Database=RecLeagueDb;User Id=sa;Password=RecLeague@2025!;TrustServerCertificate=True"
+      ASPNETCORE_URLS: "http://+:8080"
+    depends_on:
+      - sqlserver
+
+volumes:
+  sqlserver_data:
