@@ -25,6 +25,7 @@ builder.Services.AddScoped<IPlayerService, PlayerService>();
 builder.Services.AddScoped<IGameService, GameService>();
 builder.Services.AddScoped<IStatLineService, StatLineService>();
 builder.Services.AddScoped<IIngestionService, IngestionService>();
+builder.Services.AddScoped<IAnalyticsService, AnalyticsService>();
 
 // FluentValidation — scans Application assembly and registers all validators
 builder.Services.AddValidatorsFromAssemblyContaining<IngestionRequestValidator>();
@@ -36,12 +37,30 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+// Auto-apply migrations on startup with retry — SQL Server takes a few seconds to be
+// ready inside Docker even after the container starts, so we retry until it responds.
+using (var scope = app.Services.CreateScope())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    var db = scope.ServiceProvider.GetRequiredService<RecLeagueDbContext>();
+    var retries = 10;
+    while (retries-- > 0)
+    {
+        try
+        {
+            db.Database.Migrate();
+            break;
+        }
+        catch
+        {
+            if (retries == 0) throw;
+            Thread.Sleep(3000); // wait 3 seconds before retrying
+        }
+    }
 }
+
+// Swagger available in all environments so it works inside Docker
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
