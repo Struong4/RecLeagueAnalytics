@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\RecLeague.API.props" />
-</Project>
