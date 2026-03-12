@@ -21,6 +21,7 @@ public class PlayerService : IPlayerService
         {
             Id = p.Id,
             Name = p.Name,
+            Position = p.Position,
             JerseyNumber = p.JerseyNumber,
             TeamId = p.TeamId
         });
@@ -35,6 +36,7 @@ public class PlayerService : IPlayerService
         {
             Id = player.Id,
             Name = player.Name,
+            Position = player.Position,
             JerseyNumber = player.JerseyNumber,
             TeamId = player.TeamId
         };
@@ -47,6 +49,7 @@ public class PlayerService : IPlayerService
         {
             Id = p.Id,
             Name = p.Name,
+            Position = p.Position,
             JerseyNumber = p.JerseyNumber,
             TeamId = p.TeamId
         });
@@ -57,6 +60,7 @@ public class PlayerService : IPlayerService
         var player = new Player
         {
             Name = dto.Name,
+            Position = dto.Position,
             JerseyNumber = dto.JerseyNumber,
             TeamId = dto.TeamId
         };
@@ -67,6 +71,7 @@ public class PlayerService : IPlayerService
         {
             Id = player.Id,
             Name = player.Name,
+            Position = player.Position,
             JerseyNumber = player.JerseyNumber,
             TeamId = player.TeamId
         };
@@ -78,6 +83,7 @@ public class PlayerService : IPlayerService
         if (player == null) return;
 
         player.Name = dto.Name;
+        player.Position = dto.Position;
         player.JerseyNumber = dto.JerseyNumber;
         player.TeamId = dto.TeamId;
 

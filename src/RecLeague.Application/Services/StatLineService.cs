@@ -47,6 +47,8 @@ public class StatLineService : IStatLineService
             GameId = dto.GameId,
             Points = dto.Points,
             Rebounds = dto.Rebounds,
+            OffensiveRebounds = dto.OffensiveRebounds,
+            DefensiveRebounds = dto.DefensiveRebounds,
             Assists = dto.Assists,
             Steals = dto.Steals,
             Blocks = dto.Blocks,
@@ -55,6 +57,9 @@ public class StatLineService : IStatLineService
             FGM = dto.FGM,
             FTA = dto.FTA,
             FTM = dto.FTM,
+            ThreePointersMade = dto.ThreePointersMade,
+            ThreePointersAttempted = dto.ThreePointersAttempted,
+            PersonalFouls = dto.PersonalFouls,
             MinutesPlayed = dto.MinutesPlayed
         };
 
@@ -71,6 +76,8 @@ public class StatLineService : IStatLineService
         statLine.GameId = dto.GameId;
         statLine.Points = dto.Points;
         statLine.Rebounds = dto.Rebounds;
+        statLine.OffensiveRebounds = dto.OffensiveRebounds;
+        statLine.DefensiveRebounds = dto.DefensiveRebounds;
         statLine.Assists = dto.Assists;
         statLine.Steals = dto.Steals;
         statLine.Blocks = dto.Blocks;
@@ -79,6 +86,9 @@ public class StatLineService : IStatLineService
         statLine.FGM = dto.FGM;
         statLine.FTA = dto.FTA;
         statLine.FTM = dto.FTM;
+        statLine.ThreePointersMade = dto.ThreePointersMade;
+        statLine.ThreePointersAttempted = dto.ThreePointersAttempted;
+        statLine.PersonalFouls = dto.PersonalFouls;
         statLine.MinutesPlayed = dto.MinutesPlayed;
 
         await _statLineRepository.UpdateAsync(statLine);
@@ -97,6 +107,8 @@ public class StatLineService : IStatLineService
         GameId = s.GameId,
         Points = s.Points,
         Rebounds = s.Rebounds,
+        OffensiveRebounds = s.OffensiveRebounds,
+        DefensiveRebounds = s.DefensiveRebounds,
         Assists = s.Assists,
         Steals = s.Steals,
         Blocks = s.Blocks,
@@ -105,6 +117,9 @@ public class StatLineService : IStatLineService
         FGM = s.FGM,
         FTA = s.FTA,
         FTM = s.FTM,
+        ThreePointersMade = s.ThreePointersMade,
+        ThreePointersAttempted = s.ThreePointersAttempted,
+        PersonalFouls = s.PersonalFouls,
         MinutesPlayed = s.MinutesPlayed
     };
 }

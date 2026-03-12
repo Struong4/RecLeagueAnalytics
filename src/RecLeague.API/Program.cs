@@ -50,6 +50,14 @@ using (var scope = app.Services.CreateScope())
             db.Database.Migrate();
             break;
         }
+        catch (Exception ex) when (
+            ex.Message.Contains("already exists") ||
+            (ex.InnerException?.Message ?? "").Contains("already exists"))
+        {
+            // DB exists in the persistent volume from a previous run.
+            // Migrations were already applied — nothing to do.
+            break;
+        }
         catch
         {
             if (retries == 0) throw;

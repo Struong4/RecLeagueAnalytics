@@ -1,11 +1,12 @@
 # RecLeague Analytics
 
-A recreational league basketball management and analytics platform. Built with ASP.NET Core 8, SQL Server, and Clean Architecture — designed to ingest game data via JSON and surface basketball metrics through a RESTful API.
+A recreational league basketball management and analytics platform. Built with ASP.NET Core 8, SQL Server, and Clean Architecture on the backend, and a Next.js 14 + React + Tailwind CSS dashboard on the frontend — designed to ingest game data via JSON and surface basketball metrics through both a RESTful API and an interactive analytics UI.
 
 ---
 
 ## Features
 
+- **Analytics Dashboard** — dark-themed Next.js UI with sortable player stats table, team analytics, leaderboards, trend charts, and a game ingestion form
 - **Full CRUD API** for teams, players, games, and stat lines
 - **JSON Ingestion Pipeline** — POST a single game payload to persist teams, players, and stats in one atomic transaction
 - **Upsert Logic** — re-ingesting a roster won't duplicate players or teams
@@ -22,6 +23,8 @@ A recreational league basketball management and analytics platform. Built with A
 
 | Layer | Technology |
 |---|---|
+| Frontend | Next.js 14 (App Router), React 18, TypeScript, Tailwind CSS |
+| Charts | Recharts |
 | API | ASP.NET Core 8 Web API |
 | ORM | Entity Framework Core 8 (SQL Server) |
 | Validation | FluentValidation 12 |
@@ -65,18 +68,34 @@ Team ──< Game   ──< StatLine
 ### Prerequisites
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop)
+- [Node.js 18+](https://nodejs.org/) (for the frontend)
 
-### Run the full stack
+### Run the full stack (backend + database)
 
 ```bash
 docker-compose up --build
 ```
 
-Swagger UI: `http://localhost:8080/swagger`
+| Service | URL |
+|---|---|
+| API | `http://localhost:8080` |
+| Swagger UI | `http://localhost:8080/swagger` |
 
-That's it. Docker Compose handles SQL Server, runs migrations automatically, and starts the API.
+Docker Compose handles SQL Server, runs migrations automatically, and starts the API.
 
-### Local development (without Docker)
+### Run the frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Dashboard: `http://localhost:3000`
+
+The frontend proxies all `/api/*` requests to the backend at `http://localhost:8080`, so no CORS configuration is needed.
+
+### Local development (API without Docker)
 
 ```bash
 # Start SQL Server container
@@ -86,6 +105,11 @@ docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=RecLeague@2025!" \
 
 # Run the API
 dotnet run --project src/RecLeague.API/RecLeague.API.csproj
+```
+
+Then update `frontend/.env.local` to point to port 5000:
+```
+NEXT_PUBLIC_API_URL=http://localhost:5000
 ```
 
 Swagger UI: `http://localhost:5000/swagger`
@@ -215,6 +239,21 @@ POST a single JSON payload to `/api/ingestion/game` to persist an entire game �
 | AST/TO Ratio | `AST / TOV` |
 | PER/36 | `(PTS + REB + AST + STL + BLK - missed FG - missed FT - TOV) / MIN * 36` |
 | Usage Rate | `(FGA + 0.44*FTA + TOV) / (Team FGA + 0.44*Team FTA + Team TOV)` |
+
+---
+
+## Frontend Pages
+
+| Route | Description |
+|---|---|
+| `/` | Player stats table — sortable by any column, filterable by position, team, and name search |
+| `/players/{id}` | Player profile with per-game averages, shooting splits, advanced metrics, and trend chart |
+| `/teams` | All teams |
+| `/teams/{id}` | Team analytics — W/L record, PPG/RPG/APG, offensive/defensive/net efficiency |
+| `/analytics` | Scoring and efficiency leaderboards + season summary |
+| `/ingest` | Paste and submit a game JSON payload |
+
+A complete example payload is available at `samples/example-game.json`.
 
 ---
 

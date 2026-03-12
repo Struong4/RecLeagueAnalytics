@@ -24,7 +24,9 @@ public class GameService : IGameService
             HomeTeamId = g.HomeTeamId,
             AwayTeamId = g.AwayTeamId,
             HomeScore = g.HomeScore,
-            AwayScore = g.AwayScore
+            AwayScore = g.AwayScore,
+            Location = g.Location,
+            Season = g.Season
         });
     }
 
@@ -40,7 +42,9 @@ public class GameService : IGameService
             HomeTeamId = game.HomeTeamId,
             AwayTeamId = game.AwayTeamId,
             HomeScore = game.HomeScore,
-            AwayScore = game.AwayScore
+            AwayScore = game.AwayScore,
+            Location = game.Location,
+            Season = game.Season
         };
     }
 
@@ -52,7 +56,9 @@ public class GameService : IGameService
             HomeTeamId = dto.HomeTeamId,
             AwayTeamId = dto.AwayTeamId,
             HomeScore = dto.HomeScore,
-            AwayScore = dto.AwayScore
+            AwayScore = dto.AwayScore,
+            Location = dto.Location,
+            Season = dto.Season
         };
 
         await _gameRepository.AddAsync(game);
@@ -64,7 +70,9 @@ public class GameService : IGameService
             HomeTeamId = game.HomeTeamId,
             AwayTeamId = game.AwayTeamId,
             HomeScore = game.HomeScore,
-            AwayScore = game.AwayScore
+            AwayScore = game.AwayScore,
+            Location = game.Location,
+            Season = game.Season
         };
     }
 
@@ -78,6 +86,8 @@ public class GameService : IGameService
         game.AwayTeamId = dto.AwayTeamId;
         game.HomeScore = dto.HomeScore;
         game.AwayScore = dto.AwayScore;
+        game.Location = dto.Location;
+        game.Season = dto.Season;
 
         await _gameRepository.UpdateAsync(game);
     }
